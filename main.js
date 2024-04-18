@@ -57,21 +57,14 @@ function valorCarta(carta) {
 
 function sumarMano(mano) {
   let suma = 0;
-  let ases = 0;
+  
   
   for (let carta of mano) {
     const valor = valorCarta(carta);
     suma += valor;
-    if (carta.valor === 'As') {
-      ases++;
-    }
+    
   }
-  
-  while (suma > 21 && ases > 0) {
-    suma -= 10;
-    ases--;
-  }
-  
+
   return suma;
 }
 
