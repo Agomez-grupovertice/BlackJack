@@ -1,9 +1,10 @@
 import './style.css'
+
 class Carta {
   constructor(valor, palo) {
     this.valor = valor;
     this.palo = palo;
-    this.imagen = `src/img/${valor}de${palo}.jpg`;
+    this.imagen = `src/img/${valor}de${palo}.jpg`;  
   }
   
 }
@@ -46,9 +47,9 @@ function mostrarManoEnHTML(mano, destino) {
 function valorCarta(carta) {
   const valor = carta.valor;
    if (valor === 'As'){
-    return 10;
-  }else if (['J', 'Q', 'K'].includes(valor)){
     return 11;
+  }else if (['J', 'Q', 'K'].includes(valor)){
+    return 10;
   } else {
     return parseInt(valor);
   }
@@ -84,7 +85,7 @@ function jugarBlackjack() {
   jugador.push(baraja.pop());
   crupier.push(baraja.pop());
   jugador.push(baraja.pop());
-  crupier.push(baraja.pop());
+ 
   
   mostrarCartaEnHTML(crupier[0], document.querySelector('.cards-playertwo'));
   mostrarManoEnHTML(jugador, document.querySelector('.cards-playerone'));
@@ -96,6 +97,7 @@ function jugarBlackjack() {
     jugador.push(baraja.pop());
     mostrarManoEnHTML(jugador, document.querySelector('.cards-playerone'));
     const sumaJugador = sumarMano(jugador);
+    
     if (sumaJugador > 21) {
       alert('Te has pasado de 21. ¡Has perdido!');
       nuevaCartaBoton.disabled = true;
@@ -107,10 +109,10 @@ function jugarBlackjack() {
     nuevaCartaBoton.disabled = true;
     plantarseBoton.disabled = true;
 
-
+    while(sumarMano(crupier)<17){
     crupier.push(baraja.pop());
     mostrarCartaEnHTML(crupier[crupier.length - 1], document.querySelector('.cards-playertwo'));
-    
+    }
   
     const sumaJugador = sumarMano(jugador);
     const sumaCrupier = sumarMano(crupier);
@@ -119,7 +121,7 @@ function jugarBlackjack() {
       alert('¡Felicidades, has ganado!');
     } else if (sumaJugador < sumaCrupier) {
       alert('El crupier ha ganado.');
-    } else {
+    } else if (sumaCrupier === sumaJugador){
       alert('Empate.');
     }
   });
