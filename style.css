@@ -104,26 +104,11 @@ button:focus-visible {
 
 #app{
   text-align: center;  
-  background-image: url("src/img/tablero.jpg");
+  background-image: url("src/img/tablero2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 50rem;
   
-}
-
-.score-container{
-  display: flex;
-  justify-content: space-between;
-}
-
-.score-1{
-  text-align: left;
-  
-}
-
-.score-2{
-  text-align: right;
- 
 }
 
 h1, h2, h3, h4{
@@ -141,23 +126,51 @@ h4{
 
 
 .score-1{
-  margin: 5rem 0 0 5rem;
+  
+  text-align: center;
 }
 
 .score-2{
-  margin: 5rem 5rem 0  0;
+  
+  text-align: center;
 }
 
 
 .carta{
   height: 7rem;
   width: 7rem;
+  margin: 1rem;
+  
 }
 
 .image-playertwo{
   height: 7rem;
   width: 7rem;
 }
+
+.tittle{
+  color: black;
+  text-align: center;
+}
+
+.buttons{
+  display: block;
+  margin-top: 3rem;
+}
+
+.score-2{
+  padding: 2rem;
+}
+
+.buttonRandom, .stand{
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1.5rem;
+}
+
+
+
+
 
 
 
