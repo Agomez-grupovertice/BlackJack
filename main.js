@@ -30,17 +30,17 @@ function mezclarBaraja(baraja) {
   }
 }
 
-function mostrarCartaEnHTML(carta, destino) {
+function mostrarCarta(carta, destino) {
   const imagen = document.createElement('img');
   imagen.src = carta.imagen;
   imagen.className = 'carta';
   destino.appendChild(imagen);
 }
 
-function mostrarManoEnHTML(mano, destino) {
+function mostrarMano(mano, destino) {
   destino.innerHTML = '';
   for (let carta of mano) {
-    mostrarCartaEnHTML(carta, destino);
+    mostrarCarta(carta, destino);
   }
 }
 
@@ -87,15 +87,15 @@ function jugarBlackjack() {
   jugador.push(baraja.pop());
  
   
-  mostrarCartaEnHTML(crupier[0], document.querySelector('.cards-playertwo'));
-  mostrarManoEnHTML(jugador, document.querySelector('.cards-playerone'));
+  mostrarCarta(crupier[0], document.querySelector('.cards-playertwo'));
+  mostrarMano(jugador, document.querySelector('.cards-playerone'));
 
   const nuevaCartaBoton = document.querySelector('.buttonRandom');
   const plantarseBoton = document.querySelector('.stand');
 
   nuevaCartaBoton.addEventListener('click', function() {
     jugador.push(baraja.pop());
-    mostrarManoEnHTML(jugador, document.querySelector('.cards-playerone'));
+    mostrarMano(jugador, document.querySelector('.cards-playerone'));
     const sumaJugador = sumarMano(jugador);
     
     if (sumaJugador > 21) {
@@ -111,7 +111,7 @@ function jugarBlackjack() {
 
     while(sumarMano(crupier)<17){
     crupier.push(baraja.pop());
-    mostrarCartaEnHTML(crupier[crupier.length - 1], document.querySelector('.cards-playertwo'));
+    mostrarCarta(crupier[crupier.length - 1], document.querySelector('.cards-playertwo'));
     }
   
     const sumaJugador = sumarMano(jugador);
