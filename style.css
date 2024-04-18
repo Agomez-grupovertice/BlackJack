@@ -124,14 +124,11 @@ h4{
   
 }
 
-
 .score-1{
-  
   text-align: center;
 }
 
 .score-2{
-  
   text-align: center;
 }
 
@@ -140,12 +137,8 @@ h4{
   height: 7rem;
   width: 7rem;
   margin: 1rem;
+  border-radius: .5rem;
   
-}
-
-.image-playertwo{
-  height: 7rem;
-  width: 7rem;
 }
 
 .tittle{
@@ -154,7 +147,6 @@ h4{
 }
 
 .buttons{
-  display: block;
   margin-top: 3rem;
 }
 
