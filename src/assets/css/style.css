@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body { font-family: 'Roboto', sans-serif; }
+
 #app{
   text-align: center;  
-  background-image: url("src/img/tablero2.jpg");
+  background-image: url("/images/tablero2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 42rem;
@@ -48,7 +50,7 @@ h4{
   padding: 2rem;
 }
 
-.buttonRandom, .stand{
+.gameButton {
   background-color: white;
   border-radius: 2rem;
   padding: 1.5rem;
