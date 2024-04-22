@@ -1,8 +1,11 @@
 import Baraja from './classes/Baraja';
+
 import { mostrarCarta, mostrarMano, sumarMano } from './use-cases';
 
 import 'typeface-roboto';
 import './assets/css/style.css'
+
+
  
 const jugarBlackjack = () => {
  
@@ -49,6 +52,7 @@ const jugarBlackjack = () => {
     const sumaJugador = sumarMano(jugador);
     const sumaCrupier = sumarMano(crupier);
 
+    //todo: clausura de guarda
     if (sumaCrupier > 21 || sumaJugador > sumaCrupier) {
       alert('¡Felicidades, has ganado!');
     } else if (sumaJugador < sumaCrupier) {
