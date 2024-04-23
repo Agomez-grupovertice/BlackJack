@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Jack</title>
+  </head>
+  <body class="container">
+    
+<<<<<<< HEAD
+    <section>
+      <h1 class="tittle">BlackJack</h1>
+=======
+    <section class="mainContainer">
+      <h1 class="tittle underline">BlackJack</h1>
+>>>>>>> 8e5f3d86c517cbc1404a35495e64259aa0f6ca43
+      <div id="app">
+        <div class="score-2">
+          <h2 class="playerTwo ">Cruppier</h2>
+          <div class="cards-playertwo"></div>
+        </div>
+        
+        <div class="score-1">
+          <h2 class="playerOne">Jugador </h2>
+          <div class="cards-playerone"></div>
+        </div>
+
+      <div class="buttons"> 
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Click me!
+        </button>
+        
+        <button class="gameButton buttonRandom">Pedir Otra Carta</button>
+        <button class="gameButton stand">Plantarse</button>
+        <button class="gameButton newGame" disabled>Nuevo Juego</button>
+      </div>
+
+    </div>
+
+  </section>
+  
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

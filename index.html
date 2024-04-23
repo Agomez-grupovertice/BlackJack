@@ -5,32 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Black Jack</title>
   </head>
+  
   <body class="container">
     
-    <section class="mainContainer">
-      <h1 class="tittle underline">BlackJack</h1>
-      <div id="app">
-        <div class="score-2">
-          <h2 class="playerTwo ">Cruppier</h2>
-          <div class="cards-playertwo"></div>
-        </div>
-        
-        <div class="score-1">
-          <h2 class="playerOne">Jugador </h2>
-          <div class="cards-playerone"></div>
-        </div>
-
-      <div class="buttons"> 
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Click me!
-        </button>
-        
-        <button class="gameButton buttonRandom">Pedir Otra Carta</button>
-        <button class="gameButton stand">Plantarse</button>
-        <button class="gameButton newGame" disabled>Nuevo Juego</button>
-      </div>
-
+    <div class="flex justify-center mt-8">
+      <h1 class="text-white  text-5xl font-bold mb-4">Black Jack</h1>
     </div>
+
+
+        <div class="flex justify-center mt-8">
+          <h2 class="bg-white text-black font-bold rounded-lg px-4 py-2 text-2xl mb-4">
+            Cruppier
+          </h2>
+        </div>
+        <div>
+          <div class="cards-playertwo flex justify-center"></div>
+        </div>
+      
+        <div class="flex justify-center mt-8">
+          <h2 class="bg-white text-black font-bold rounded-lg px-4 py-2 text-2xl mb-4">
+            Jugador
+          </h2>
+        </div>
+          <div class="cards-playerone flex justify-center"></div>
+        </div>
+        
+        </div>
+
+        <div>
+          <div class="flex justify-center mt-8">
+            <button class="buttonRandom bg-white text-black rounded-lg px-6 py-3 transition-colors duration-300 
+                          hover:bg-green-200 cursor-pointer mr-4 disabled:opacity-50 disabled:bg-gray-400">
+              Pedir Otra Carta
+            </button>
+            <button class="stand bg-white text-black rounded-lg px-6 py-3 transition-colors duration-300 
+                          hover:bg-green-200 cursor-pointer mr-4 disabled:opacity-50 disabled:bg-gray-400">
+              Plantarse
+            </button>
+            <button class="newGame bg-white text-black rounded-lg px-6 py-3 transition-colors duration-300 
+                          hover:bg-green-200 cursor-pointer disabled:opacity-50 disabled:bg-gray-400">
+              Nuevo Juego
+            </button>
+          </div>
+        </div>
 
   </section>
   

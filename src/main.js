@@ -1,10 +1,11 @@
 import Baraja from './classes/Baraja';
 
-import { mostrarCarta, mostrarMano, sumarMano } from './use-cases';
+import { empate, ganar, mostrarCarta, mostrarMano, perderCrupier, perderPasarse, sumarMano, cerrarModal } from './use-cases';
 
 import 'typeface-roboto';
 import './assets/css/style.css'
 import './assets/css/output.css'
+
 
 
 export const jugarBlackjack = () => {
@@ -34,10 +35,14 @@ export const jugarBlackjack = () => {
     const sumaJugador = sumarMano(jugador);
     
     if (sumaJugador > 21) {
-      alert('Te has pasado de 21. ¡Has perdido!');
+      perderPasarse()
+      cerrarModal()
       nuevaCartaBoton.disabled = true;
       plantarseBoton.disabled = true;
+      
     }
+
+    
 
     const nuevoJuegoBoton = document.querySelector(".newGame")
     nuevoJuegoBoton.disabled = false
@@ -57,15 +62,15 @@ export const jugarBlackjack = () => {
 
     
     const validador = () => {
-      if (sumaCrupier > 21 || sumaJugador > sumaCrupier) return alert("Felicidades, has ganado!")
-      if (sumaJugador < sumaCrupier) return alert('El crupier ha ganado.')
-      if (sumaCrupier === sumaJugador) return alert('Empate.')
+      if (sumaCrupier > 21 || sumaJugador > sumaCrupier) return ganar()
+      if (sumaJugador < sumaCrupier) return perderCrupier()
+      if (sumaCrupier === sumaJugador) return empate()
     }
 
     validador()
-
+    cerrarModal()
     nuevoJuegoBoton.disabled = false  
-  
+    
   });
 
   const nuevoJuegoBoton = document.querySelector(".newGame")
@@ -97,5 +102,6 @@ export const jugarBlackjack = () => {
 }
 
 jugarBlackjack()
+cerrarModal()
 
 

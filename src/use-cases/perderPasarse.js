@@ -1,5 +1,5 @@
-const ganar = () => {
- 
+
+const perderPasarse = () => {
     const container = document.querySelector(".container")
     const modal = document.createElement("DIV")
     modal.classList.add("modal")
@@ -14,15 +14,15 @@ const ganar = () => {
       <div x-show="open" x-transition:enter="transition-transform ease-out duration-300" x-transition:enter-start="transform scale-75" x-transition:enter-end="transform scale-100" x-transition:leave="transition-transform ease-in duration-300" x-transition:leave-start="transform scale-100" x-transition:leave-end="transform scale-75" class="bg-white rounded-md shadow-xl overflow-hidden max-w-md w-full sm:w-96 md:w-1/2 lg:w-2/3 xl:w-1/3 z-50">
         <!-- Modal Header -->
         <div class="bg-green-500 text-white px-4 py-2 flex justify-between">
-          <h2 class="text-lg font-semibold">HAS GANADO!</h2>
-        </div>
+          <h2 class="text-lg font-semibold">Has perdido...</h2>
+        </div
         <!-- Modal Body -->
         <div class="p-4">
-          <p>Si quieres seguir demostrando lo bueno que eres pulsa el botón de aceptar e incia una nueva partida</p>
+          <p>Te has pasado de 21. Si quieres seguir practicando pulsa el botón de aceptar e incia una nueva partida</p>
         </div>
         <!-- Modal Footer -->
         <div class="border-t px-4 py-2 flex justify-end">
-          <button x-on:click="open = false" class="btn-modal px-3 py-1 bg-green-500 text-white  rounded-md w-full sm:w-auto"> Aceptar</button>
+          <button x-on:click="open = false" class="btn-modal px-3 py-1 bg-green-500 text-white  rounded-md w-full sm:w-auto"> Aceptar </button>
         </div>
       </div>
     </div>
@@ -32,5 +32,4 @@ const ganar = () => {
     
 }
 
-
-export default ganar
+ export default perderPasarse
