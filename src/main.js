@@ -1,9 +1,10 @@
 import Baraja from './classes/Baraja';
 
-import { mostrarCarta, mostrarMano, sumarMano, ganar, perder, empate } from './use-cases';
+import { mostrarCarta, mostrarMano, sumarMano } from './use-cases';
 
 import 'typeface-roboto';
 import './assets/css/style.css'
+import './assets/css/output.css'
 
 
 export const jugarBlackjack = () => {
