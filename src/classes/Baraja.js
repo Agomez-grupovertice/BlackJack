@@ -20,7 +20,7 @@ class Baraja {
             let carta = {};
             carta.valor = valor;
             carta.palo = palo;
-            carta.imagen = `/images/${valor}de${palo}.jpg`;
+            carta.imagen = `/images/${valor}de${palo}.svg`;
 
             this.baraja.push(carta); //pushear carta
 

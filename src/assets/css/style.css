@@ -4,14 +4,13 @@
 
 body { font-family: 'Roboto', sans-serif; }
 
-#app{
-  text-align: center;  
+.container{
   background-image: url("/images/tablero2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 42rem;
-  border-radius: 2rem;
-  
+}
+#app{
+  text-align: center;  
 }
 
 h1, h2, h3, h4{
@@ -28,15 +27,15 @@ h4{
 }
 
 .carta{
-  height: 8rem;
   width: 8rem;
+  
   margin: 1rem;
   border-radius: .5rem;
   
 }
 
 .tittle{
-  color: black;
+  color: white;
   text-align: center;
   font-size: 2rem;
   

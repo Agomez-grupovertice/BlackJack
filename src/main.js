@@ -63,7 +63,7 @@ export const jugarBlackjack = () => {
 
     validador()
 
-      nuevoJuegoBoton.disabled = false  
+    nuevoJuegoBoton.disabled = false  
   
   });
 
