@@ -1,6 +1,7 @@
 // vite.config.js
 import { defineConfig } from 'vite'
 import path from 'path'
+import tailwindcss from 'tailwindcss'
 
 export default defineConfig({
   // Configuración del servidor de desarrollo
@@ -32,6 +33,7 @@ export default defineConfig({
     }
   },
   plugins: [
+    tailwindcss(),
     // ... tus plugins aquí ...
   ]
 })
