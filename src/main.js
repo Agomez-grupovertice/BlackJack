@@ -1,13 +1,12 @@
 import Baraja from './classes/Baraja';
 
-import { mostrarCarta, mostrarMano, sumarMano } from './use-cases';
+import { mostrarCarta, mostrarMano, sumarMano, ganar, perder, empate } from './use-cases';
 
 import 'typeface-roboto';
 import './assets/css/style.css'
 
 
- 
-const jugarBlackjack = () => {
+export const jugarBlackjack = () => {
  
   //nueva implementacion 
   let prepararBaraja = new Baraja();
@@ -38,6 +37,9 @@ const jugarBlackjack = () => {
       nuevaCartaBoton.disabled = true;
       plantarseBoton.disabled = true;
     }
+
+    const nuevoJuegoBoton = document.querySelector(".newGame")
+    nuevoJuegoBoton.disabled = false
   });
 
   plantarseBoton.addEventListener('click', function() {
@@ -52,15 +54,45 @@ const jugarBlackjack = () => {
     const sumaJugador = sumarMano(jugador);
     const sumaCrupier = sumarMano(crupier);
 
-    //todo: clausura de guarda
-    if (sumaCrupier > 21 || sumaJugador > sumaCrupier) {
-      alert('¡Felicidades, has ganado!');
-    } else if (sumaJugador < sumaCrupier) {
-      alert('El crupier ha ganado.');
-    } else if (sumaCrupier === sumaJugador){
-      alert('Empate.');
+    
+    const validador = () => {
+      if (sumaCrupier > 21 || sumaJugador > sumaCrupier) return alert("Felicidades, has ganado!")
+      if (sumaJugador < sumaCrupier) return alert('El crupier ha ganado.')
+      if (sumaCrupier === sumaJugador) return alert('Empate.')
     }
+
+    validador()
+
+      nuevoJuegoBoton.disabled = false  
+  
   });
+
+  const nuevoJuegoBoton = document.querySelector(".newGame")
+  nuevoJuegoBoton.addEventListener("click", function(){
+
+    crupier.length  = 0
+    jugador.length  = 0
+   
+    mostrarMano(crupier, document.querySelector('.cards-playertwo'));
+    mostrarMano(jugador, document.querySelector('.cards-playerone'));
+
+  let prepararBaraja = new Baraja();
+  prepararBaraja.crearBaraja(); // Crea la baraja con las cartas ordenadas
+  prepararBaraja.mezclarBaraja(); // Mezcla las cartas de la baraja
+  let baraja = prepararBaraja.baraja; 
+
+  jugador.push(baraja.pop());
+  crupier.push(baraja.pop());
+  jugador.push(baraja.pop());
+  
+  mostrarCarta(crupier[0], document.querySelector('.cards-playertwo'));
+  mostrarMano(jugador, document.querySelector('.cards-playerone'));
+
+  nuevaCartaBoton.disabled = false
+  plantarseBoton.disabled = false
+  nuevoJuegoBoton.disabled = true
+  
+   });
 }
 
 jugarBlackjack()
